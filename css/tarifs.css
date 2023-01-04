@@ -1,0 +1,40 @@
+.container-box{
+    grid-template-columns: 1fr;
+}
+
+.container-box .box{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 50px;
+}
+.container-box .box:not(:last-of-type){
+    padding-bottom: 30px;
+    border-bottom: 3px dotted var(--color-black);
+}
+
+.container-box .box img{
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1 / 1;
+    
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+}
+
+.container-box .box table td{
+    width: calc(100% / 3);
+
+}
+.container-box .box table td:last-of-type{
+    text-align: right;
+}
+
+
+.container-box table td{
+    padding: 0 20px;
+}
+.container-box table tr:nth-child(odd){
+    background-color: rgb(0, 0, 0, 0.1);
+}

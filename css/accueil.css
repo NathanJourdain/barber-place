@@ -1,0 +1,95 @@
+h1{display: none;}
+
+
+/* SLIDER */
+.slider{
+    /* Rapport 2:1 */
+    max-width: 1200px;
+    width: 90vw;
+    aspect-ratio: 2 / 1;
+
+    display: grid;
+    grid-template-columns: repeat(5 ,100%);
+    overflow: hidden;
+
+    margin: 0 auto;
+}
+
+
+.slider img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation:  15s slider-animation infinite,
+                15s opacity-animation infinite;
+}
+
+@keyframes slider-animation {
+    0%,15%{transform: translateX(0%);}
+    20%,35%{transform: translateX(-100%);}
+    40%,55%{transform: translateX(-200%);}
+    60%,75%{transform: translateX(-300%);}
+    80%,95%{transform: translateX(-400%);}
+}
+@keyframes opacity-animation {
+    0%,15%{opacity: 1;}
+    20%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+
+/* Texte de présentation */
+.presentation p{
+    font-size: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+
+/* Actualités */ 
+.actualites{
+    margin: auto;
+    overflow-x: hidden;
+}
+
+.actualites .actualites-container{
+    display: grid;
+    grid-template-columns: repeat(4, 100%);
+    animation: slider-actualities 20s infinite;
+    transform: translateX(100%);
+}
+.actualites .actualites-container > div{
+    height: 100%;
+}
+
+.actualites .actualites-container + p{
+    text-align: center;
+    color: var(--color-maroon);
+    margin-top: 0;
+    font-style: italic;
+}
+
+/* Mise au pose de l'animation pour voir avoir le temps de lire les actualités */
+.actualites .actualites-container:hover{
+    animation-play-state: paused;
+}
+.actualites .actualites-container:hover div{
+    border: 3px solid var(--color-maroon);
+}
+
+.actualites .actualites-container div{
+    margin: auto;
+    width: 85%;
+    border: 1px solid var(--color-black);
+    padding: 20px;
+}
+
+
+
+@keyframes slider-actualities {
+    5%,25%{transform: translateX(0);}
+    30%,50%{transform: translateX(-100%);}
+    55%,75%{transform: translateX(-200%);}
+    80%,95%{transform: translateX(-300%);}
+    100%{transform: translateX(-400%);}
+}

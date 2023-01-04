@@ -1,0 +1,26 @@
+main > a {
+    font-size: 18px;
+}
+
+main > p{
+    width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+main > section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main > section > img{
+    width: 350px;
+    height: 350px;
+    margin: 10px;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+main section > img:hover{
+    transform: scale(1.05);
+}
